@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Wind Turbine Engineer</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: linear-gradient(135deg, #e8f3ff, #f5faff);
+    color: #111;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 50px;
+    background: #ffffff;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+}
+
+.warning {
+    display: none;
+    background: #fff1f1;
+    border-left: 5px solid #c70000;
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+.warning p {
+    margin: 6px 0;
+    font-size: 15px;
+}
+
+.columns {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+h2 {
+    margin-bottom: 15px;
+    color: #000;
+}
+
+p {
+    line-height: 1.7;
+    font-size: 15px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<div id="vpnWarning" class="warning">
+    <p>请关闭 VPN 后继续访问本网站。</p>
+    <p>Please disable your VPN to continue.</p>
+    <p>Пожалуйста, отключите VPN для продолжения.</p>
+</div>
+
+<div class="columns">
+
+<!-- 中文 -->
+<div>
+<h2>中文简介</h2>
+<p>
+我是一名风力涡轮机工程师，专注于风能系统的软件开发与性能优化。
+</p>
+<p>
+我的专业方向涵盖涡轮机运行逻辑、气流建模以及转速与负载的精确计算。
+我开发用于实时分析涡轮效率、机械状态和能量输出的算法系统。
+</p>
+<p>
+通过结合工程技术与软件智能化方案，
+我致力于提升风电系统的稳定性、安全性与整体能源利用率。
+</p>
+</div>
+
+<!-- English -->
+<div>
+<h2>English Biography</h2>
+<p>
+I am a wind turbine engineer specializing in software systems and performance optimization
+within the renewable energy sector.
+</p>
+<p>
+My work focuses on turbine control logic, airflow analysis,
+and precise rotational speed and load calculations.
+I design real-time algorithms to evaluate efficiency,
+mechanical stress, and power generation output.
+</p>
+<p>
+By integrating engineering principles with intelligent software solutions,
+I aim to improve operational stability, safety,
+and overall wind energy efficiency.
+</p>
+</div>
+
+<!-- Русский -->
+<div>
+<h2>Биография</h2>
+<p>
+Я инженер по ветровым турбинам, работающий в области программных систем
+и оптимизации производительности ветроэнергетических установок.
+</p>
+<p>
+Моя специализация включает анализ работы турбин,
+моделирование воздушных потоков,
+а также точные расчёты скорости вращения и нагрузок.
+</p>
+<p>
+Объединяя инженерные решения и программную логику,
+я стремлюсь повысить стабильность,
+безопасность и эффективность ветроэнергетических систем.
+</p>
+</div>
+
+</div>
+</div>
+
+<script>
+fetch("https://job-description-9g87.onrender.com")
+.then(res => res.json())
+.then(data => {
+    if (data.vpn) {
+        document.getElementById("vpnWarning").style.display = "block";
+        setTimeout(() => {
+            window.location.href = "https://www.goldwind.com/en/";
+        }, 7000);
+    }
+});
+</script>
+
+</body>
+</html>
