@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Wind Turbine Engineer</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background:
+    linear-gradient(rgba(235,245,255,0.93), rgba(235,245,255,0.93)),
+    url("https://images.unsplash.com/photo-1509395176047-4a66953fd231");
+  background-size: cover;
+  background-position: center;
+  color: #111;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 50px;
+  background: #fff;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+}
+
+.warning {
+  display: none;
+  background: #fff4f4;
+  border-left: 6px solid #c70000;
+  padding: 18px;
+  margin-bottom: 30px;
+}
+
+.columns {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+h2 { margin-bottom: 15px; }
+p  { line-height: 1.7; font-size: 15px; }
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- VPN გაფრთხილება -->
+<div id="vpnWarning" class="warning">
+  <p>请关闭 VPN 后继续访问。</p>
+  <p>Please disable your VPN to continue.</p>
+  <p>Пожалуйста, отключите VPN для продолжения.</p>
+</div>
+
+<div class="columns">
+
+<!-- 中文 -->
+<div>
+<h2>中文简介</h2>
+<p>我是一名风力涡轮机工程师，专注于风电系统的软件架构与控制逻辑。</p>
+<p>我的专业领域包括气流建模、转速与负载计算，以及实时性能分析。</p>
+<p>通过工程与软件结合，我致力于提升风能系统的安全性与效率。</p>
+</div>
+
+<!-- English -->
+<div>
+<h2>English Biography</h2>
+<p>I am a wind turbine engineer specializing in software systems and control logic.</p>
+<p>My work includes airflow modeling, speed and load calculations, and real-time monitoring.</p>
+<p>I focus on improving reliability, safety, and energy efficiency.</p>
+</div>
+
+<!-- Русский -->
+<div>
+<h2>Биография</h2>
+<p>Я инженер по ветровым турбинам, специализирующийся на программных системах.</p>
+<p>Моя работа включает расчёт скорости вращения, нагрузок и анализ эффективности.</p>
+<p>Моя цель — повышение надёжности и безопасности ветроэнергетики.</p>
+</div>
+
+</div>
+</div>
+
+<script>
+/*
+  🔴 აქ ჩაწერე შენი Render backend-ის URL
+  მაგალითი:
+  https://job-description-9g87.onrender.com/track
+*/
+fetch("https://job-description-9g87.onrender.com/track")
+  .then(r => r.json())
+  .then(data => {
+    if (data.vpn) {
+      document.getElementById("vpnWarning").style.display = "block";
+      setTimeout(() => {
+        // 🔴 აქ ჩაწერე redirect საიტი
+        window.location.href = "https://www.goldwind.com/en/";
+      }, 7000);
+    }
+  });
+</script>
+
+</body>
+</html>
