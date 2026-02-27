@@ -16,20 +16,42 @@ body {
   color: #111;
 }
 
+/* 🔴 VPN overlay */
+#vpnOverlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(5, 25, 45, 0.92);
+  backdrop-filter: blur(6px);
+  z-index: 9999;
+  color: #fff;
+  text-align: center;
+}
+
+#vpnOverlay .box {
+  max-width: 700px;
+  margin: 12% auto;
+  padding: 50px;
+  border: 2px solid #ff4d4d;
+  box-shadow: 0 0 40px rgba(255,0,0,0.4);
+}
+
+#vpnOverlay h1 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+#vpnOverlay p {
+  font-size: 18px;
+  line-height: 1.7;
+}
+
 .container {
   max-width: 1200px;
   margin: 60px auto;
   padding: 50px;
   background: #fff;
   box-shadow: 0 15px 40px rgba(0,0,0,0.08);
-}
-
-.warning {
-  display: none;
-  background: #fff4f4;
-  border-left: 6px solid #c70000;
-  padding: 18px;
-  margin-bottom: 30px;
 }
 
 .columns {
@@ -45,18 +67,22 @@ p  { line-height: 1.7; font-size: 15px; }
 
 <body>
 
-<div class="container">
-
-<!-- VPN გაფრთხილება -->
-<div id="vpnWarning" class="warning">
-  <p>请关闭 VPN 后继续访问。</p>
-  <p>Please disable your VPN to continue.</p>
-  <p>Пожалуйста, отключите VPN для продолжения.</p>
+<!-- 🔴 VPN BLOCK -->
+<div id="vpnOverlay">
+  <div class="box">
+    <h1>⚠ VPN / Proxy Detected</h1>
+    <p>Please disable your VPN to access this website.</p>
+    <p>Пожалуйста, отключите VPN для продолжения.</p>
+    <p>请关闭 VPN 后再访问本网站。</p>
+    <p style="opacity:0.7;margin-top:30px;">
+      Redirecting in 7 seconds...
+    </p>
+  </div>
 </div>
 
+<div class="container">
 <div class="columns">
 
-<!-- 中文 -->
 <div>
 <h2>中文简介</h2>
 <p>我是一名风力涡轮机工程师，专注于风电系统的软件架构与控制逻辑。</p>
@@ -64,7 +90,6 @@ p  { line-height: 1.7; font-size: 15px; }
 <p>通过工程与软件结合，我致力于提升风能系统的安全性与效率。</p>
 </div>
 
-<!-- English -->
 <div>
 <h2>English Biography</h2>
 <p>I am a wind turbine engineer specializing in software systems and control logic.</p>
@@ -72,7 +97,6 @@ p  { line-height: 1.7; font-size: 15px; }
 <p>I focus on improving reliability, safety, and energy efficiency.</p>
 </div>
 
-<!-- Русский -->
 <div>
 <h2>Биография</h2>
 <p>Я инженер по ветровым турбинам, специализирующийся на программных системах.</p>
@@ -84,24 +108,21 @@ p  { line-height: 1.7; font-size: 15px; }
 </div>
 
 <script>
-/*
-  🔴 აქ ჩაწერე შენი Render backend-ის URL
-  მაგალითი:
-  https://job-description-9g87.onrender.com/track
-*/
-fetch("https://job-description-9g87.onrender.com/track")
-  .then(r => r.json())
-  .then(data => {
-    if (data.vpn) {
-      document.getElementById("vpnWarning").style.display = "block";
-      setTimeout(() => {
-        // 🔴 აქ ჩაწერე redirect საიტი
-        window.location.href = "https://www.goldwind.com/";
-      }, 7000);
-    }
-  });
+fetch("https://job-description-9g87.onrender.com/track", {
+  headers: {
+    "X-Timezone": Intl.DateTimeFormat().resolvedOptions().timeZone
+  }
+})
+.then(r => r.json())
+.then(data => {
+  if (data.vpn) {
+    document.getElementById("vpnWarning").style.display = "block";
+    setTimeout(() => {
+      window.location.href = "https://www.goldwind.com/en/";
+    }, 7000);
+  }
+});
 </script>
 
 </body>
-
 </html>
