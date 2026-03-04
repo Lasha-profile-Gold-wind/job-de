@@ -2,92 +2,204 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Wind Turbine Engineer</title>
+<title>Senior Wind Turbine Engineer | Professional Profile</title>
 
 <style>
 body {
   margin: 0;
   font-family: "Segoe UI", Arial, sans-serif;
   background:
-    linear-gradient(rgba(235,245,255,0.93), rgba(235,245,255,0.93)),
-    url("https://images.unsplash.com/photo-1509395176047-4a66953fd231");
+    linear-gradient(rgba(235,245,255,0.95), rgba(235,245,255,0.95)),
+    url("https://images.unsplash.com/photo-1509395176047-4a66953fd231?auto=format&fit=crop&w=1950&q=80");
   background-size: cover;
   background-position: center;
   color: #111;
 }
 
-/* --- VPN FULL BLOCK --- */
-body.vpn-blocked {
+/* ===== HARD BLOCK (403) ===== */
+body.blocked {
   overflow: hidden;
 }
-
-body.vpn-blocked .container {
+body.blocked .container {
   display: none;
 }
 
+/* ===== VPN OVERLAY ===== */
 #vpnOverlay {
   display: none;
   position: fixed;
   inset: 0;
-  background: rgba(5,25,45,0.95);
+  background: rgba(6, 22, 40, 0.97);
+  backdrop-filter: blur(8px);
   z-index: 9999;
   color: #fff;
   text-align: center;
 }
 
 #vpnOverlay .box {
-  max-width: 700px;
-  margin: 12% auto;
-  padding: 50px;
+  max-width: 900px;
+  margin: 8% auto;
+  padding: 60px;
   border: 2px solid #ff4d4d;
-  box-shadow: 0 0 40px rgba(255,0,0,0.4);
+  box-shadow: 0 0 55px rgba(255, 77, 77, 0.55);
 }
 
+#vpnOverlay h1 {
+  font-size: 38px;
+  margin-bottom: 30px;
+}
+
+#vpnOverlay p {
+  font-size: 18px;
+  line-height: 1.85;
+}
+
+/* ===== MAIN LAYOUT ===== */
 .container {
-  max-width: 1200px;
-  margin: 60px auto;
-  padding: 50px;
-  background: #fff;
-  box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+  max-width: 1400px;
+  margin: 70px auto;
+  padding: 70px;
+  background: #ffffff;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.12);
 }
 
 .columns {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
+  gap: 50px;
+}
+
+h2 {
+  margin-bottom: 25px;
+  font-size: 24px;
+  border-bottom: 2px solid #e1e8f0;
+  padding-bottom: 12px;
+}
+
+p {
+  line-height: 2;
+  font-size: 16px;
+  margin-bottom: 18px;
 }
 </style>
 </head>
 
 <body>
 
+<!-- ===== VPN / 403 BLOCK ===== -->
 <div id="vpnOverlay">
   <div class="box">
-    <h1>⚠ VPN / Proxy Detected</h1>
-    <p>Please disable your VPN to access this website.</p>
-    <p>Пожалуйста, отключите VPN для продолжения.</p>
-    <p>请关闭 VPN 后再访问本网站。</p>
-    <p style="opacity:.7;margin-top:30px;">
-      Page will refresh in 5 seconds…
+    <h1>403 — Access Restricted</h1>
+    <p>
+      Access to this website has been temporarily restricted due to
+      the use of VPN, proxy, or anonymization technologies.
+    </p>
+    <p>
+      Пожалуйста, отключите VPN или прокси-сервис для продолжения доступа.
+    </p>
+    <p>
+      请关闭 VPN 或代理服务后再访问本网站。
+    </p>
+    <p style="opacity:0.75;margin-top:40px;">
+      This security policy is enforced to protect intellectual property,
+      data integrity, and operational transparency.
     </p>
   </div>
 </div>
 
+<!-- ===== CONTENT ===== -->
 <div class="container">
-  <div class="columns">
-    <div>
-      <h2>中文简介</h2>
-      <p>我是一名风力涡轮机工程师，专注于风电系统的软件架构与控制逻辑。</p>
-    </div>
-    <div>
-      <h2>English Biography</h2>
-      <p>I am a wind turbine engineer specializing in software systems and control logic.</p>
-    </div>
-    <div>
-      <h2>Биография</h2>
-      <p>Я инженер по ветровым турбинам, специализирующийся на программных системах.</p>
-    </div>
-  </div>
+<div class="columns">
+
+<!-- 中文 -->
+<div>
+<h2>中文专业简介</h2>
+<p>
+我是一名资深风力涡轮机工程师，在风能与可再生能源行业
+拥有超过十年的持续实践经验。
+我的工作重点集中在风力涡轮机的软件系统、
+控制算法以及复杂运行数据的工程级分析。
+</p>
+<p>
+在职业生涯中，我深入参与了风机转速控制、
+气动负载建模、功率输出优化以及安全保护逻辑的设计与实施。
+通过精确计算与实时数据处理，
+我帮助多个风电项目显著提升了整体发电效率与设备可靠性。
+</p>
+<p>
+除软件开发外，我还具备丰富的现场工程经验，
+包括风机安装、调试、系统验收以及运行故障分析。
+我能够将理论模型与真实运行环境紧密结合，
+确保技术方案在实际工况中的可行性。
+</p>
+<p>
+目前，我负责管理和协调一支由20名工程师组成的多学科团队，
+涵盖软件、电气、机械及运维方向，
+为大型陆上与海上风电项目提供全生命周期技术支持。
+</p>
+</div>
+
+<!-- English -->
+<div>
+<h2>Professional Biography</h2>
+<p>
+I am a senior wind turbine engineer with over a decade of hands-on
+experience in the renewable energy sector,
+specializing in turbine software systems,
+control architecture, and performance optimization.
+</p>
+<p>
+Throughout my career, I have been deeply involved in the development
+of turbine control logic, aerodynamic load modeling,
+rotational speed calculations, and power curve optimization.
+My work focuses on transforming raw operational data
+into actionable engineering insights.
+</p>
+<p>
+In addition to software engineering,
+I possess extensive field experience in turbine installation,
+commissioning, diagnostics, and long-term operational analysis.
+This allows me to design systems that are not only theoretically sound
+but also robust under real-world operating conditions.
+</p>
+<p>
+I currently lead a multidisciplinary engineering team of 20 professionals,
+overseeing the integration of software, electrical,
+mechanical, and operational workflows
+to ensure reliability, safety, and efficiency
+across utility-scale wind energy projects.
+</p>
+</div>
+
+<!-- Русский -->
+<div>
+<h2>Профессиональная биография</h2>
+<p>
+Я старший инженер по ветровым турбинам с более чем
+десятилетним опытом работы в сфере возобновляемой энергетики.
+Моя основная специализация — программные системы,
+алгоритмы управления и анализ производительности ветроустановок.
+</p>
+<p>
+В процессе работы я занимался расчетами аэродинамических нагрузок,
+скорости вращения, оптимизации выработки электроэнергии,
+а также разработкой систем мониторинга и защиты оборудования.
+</p>
+<p>
+Помимо программной инженерии,
+я обладаю практическим опытом монтажа, пуско-наладки
+и технической диагностики ветровых турбин.
+Это позволяет мне эффективно связывать программную логику
+с физическими процессами оборудования.
+</p>
+<p>
+В настоящее время я руковожу командой из 20 инженеров,
+обеспечивая комплексный инженерный подход
+к эксплуатации и развитию крупных ветроэнергетических проектов.
+</p>
+</div>
+
+</div>
 </div>
 
 <script>
@@ -99,9 +211,29 @@ fetch("https://job-description-9g87.onrender.com/track", {
 .then(r => r.json())
 .then(data => {
   if (data.vpn) {
-    document.body.classList.add("vpn-blocked");
+    document.body.classList.add("blocked");
     document.getElementById("vpnOverlay").style.display = "block";
-    setTimeout(() => location.reload(), 5000);
+
+    // 5 წამში სრული ჩაკეტვა (403 იმიტაცია)
+    setTimeout(() => {
+      document.body.innerHTML = `
+        <div style="
+          display:flex;
+          align-items:center;
+          justify-content:center;
+          height:100vh;
+          background:#060606;
+          color:#fff;
+          font-family:Segoe UI, Arial;
+          text-align:center;
+        ">
+          <div>
+            <h1 style="font-size:44px;">403 Forbidden</h1>
+            <p>Access to this resource has been denied.</p>
+          </div>
+        </div>
+      `;
+    }, 5000);
   }
 });
 </script>
